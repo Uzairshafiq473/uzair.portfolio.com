@@ -8,20 +8,20 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.css">
 
-    <link rel="stylesheet" href="css/aos.css">
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
 
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/aos.css">
+
+	<link rel="stylesheet" href="css/ionicons.min.css">
+
+	<link rel="stylesheet" href="css/flaticon.css">
+	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="css/style.css">
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -133,6 +133,8 @@
 					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
 					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
 					<li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
+					<li class="nav-item"><a href="#Certificate-section" class="nav-link"><span>Certificates</span></a></li>
+					<li class="nav-item"><a href="#Internship-section" class="nav-link"><span>Internships</span></a></li>
 					<li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
 					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
 				</ul>
@@ -265,18 +267,18 @@
 										<div class="progress-bar" role="progressbar" style="width: 90%;"
 											aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
 									</div>
-                                    <span> Excel </span> <span class="pull-right">90%</span>
+									<span> Excel </span> <span class="pull-right">90%</span>
 									<div class="progress">
 										<div class="progress-bar" role="progressbar" style="width: 90%;"
 											aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-									</div> 
+									</div>
 
 									<span>Statistical Analysis</span> <span class="pull-right">80%</span>
 									<div class="progress">
 										<div class="progress-bar" role="progressbar" style="width: 80%"
 											aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
 									</div>
-                                     
+
 									<span>PYTHON</span> <span class="pull-right">70%</span>
 									<div class="progress">
 										<div class="progress-bar" role="progressbar" style="width: 70%"
@@ -295,8 +297,8 @@
 											aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
 									</div>
 
-									
-								</div> 
+
+								</div>
 								<br>
 								<br>
 								<div style="margin-bottom: 20px; position: relative; width: 100%; height: 600px;">
@@ -307,7 +309,7 @@
 									const techStackChart = new Chart(techCtx, {
 										type: 'bar',
 										data: {
-											labels: [ 'BI Tools', 'SQL', 'Excel', 'Python', 'Statistics', 'Data Analysis', 'Machine Learning'],
+											labels: ['BI Tools', 'SQL', 'Excel', 'Python', 'Statistics', 'Data Analysis', 'Machine Learning'],
 											datasets: [{
 												label: 'Years of Experience',
 												data: [5, 5, 5, 4, 4, 3, 3],
@@ -350,7 +352,7 @@
 										}
 									});
 								</script>
-								
+
 							</div>
 						</div>
 					</div>
@@ -386,8 +388,9 @@
 							</div>
 						</div>
 
-                        <div class="skill-mf">
-							<p class="title-s text-center text-white " style= "font-size: 24px; font-weight: bold ">  Workload Distribution </p>
+						<div class="skill-mf">
+							<p class="title-s text-center text-white " style="font-size: 24px; font-weight: bold ">
+								Workload Distribution </p>
 							<div class="chart-container" style="position: relative; width: 100%; height: 300px;">
 								<canvas id="timeAllocationChart"></canvas>
 							</div>
@@ -399,26 +402,26 @@
 						<!-- Pie Chart Script -->
 						<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-                        
+
 						<script>
 							const timeAllocationCtx = document.getElementById('timeAllocationChart').getContext('2d');
-						
+
 							// Custom plugin to display percentage labels
 							const percentageLabelPlugin = {
 								id: 'percentageLabel',
-								afterDatasetsDraw: function(chart) {
+								afterDatasetsDraw: function (chart) {
 									const ctx = chart.ctx;
 									ctx.restore();
 									const dataset = chart.data.datasets[0];
 									const total = dataset.data.reduce((acc, val) => acc + val, 0);
-									
+
 									chart.data.labels.forEach((label, index) => {
 										const value = dataset.data[index];
 										const percentage = Math.round((value / total) * 100); // Round to whole number
-						
+
 										const meta = chart.getDatasetMeta(0);
 										const slice = meta.data[index];
-										
+
 										if (slice) {
 											const position = slice.tooltipPosition();
 											ctx.fillStyle = '#fff'; // White color for text
@@ -428,11 +431,11 @@
 											ctx.fillText(percentage + '%', position.x, position.y);
 										}
 									});
-						
+
 									ctx.save();
 								}
 							};
-						
+
 							const timeAllocationChart = new Chart(timeAllocationCtx, {
 								type: 'pie',
 								data: {
@@ -448,7 +451,7 @@
 									plugins: {
 										tooltip: {
 											callbacks: {
-												label: function(context) {
+												label: function (context) {
 													let label = context.label || '';
 													let value = context.raw;
 													return `${label}: ${value}%`;
@@ -460,26 +463,31 @@
 								plugins: [percentageLabelPlugin] // Register the custom plugin
 							});
 						</script>
-                        <br>
-						
+						<br>
+
 						<div class="col-md-12">
-							<div class="uzair " style="display: flex; justify-content: space-around; text-align: center; margin-bottom: 5%;">
-								<div class="uzi" style="background-color: #ffbd39; padding: 10px;border-radius: 20px; margin: 10px;">
+							<div class="uzair "
+								style="display: flex; justify-content: space-around; text-align: center; margin-bottom: 5%;">
+								<div class="uzi"
+									style="background-color: #ffbd39; padding: 10px;border-radius: 20px; margin: 10px;">
 									<h3 style="font-size: 24px; font-weight: bold; color: white;">50+</h3>
 									<p style="font-size: 14px; font-weight: bold; color: white;">Datasets Analyzed</p>
 								</div>
-								<div class="uzi" style="background-color: #ffbd39; padding: 10px;border-radius: 20px; margin: 10px;">
+								<div class="uzi"
+									style="background-color: #ffbd39; padding: 10px;border-radius: 20px; margin: 10px;">
 									<h3 style="font-size: 24px; font-weight: bold; color: white; ">10+</h3>
 									<p style="font-size: 14px; font-weight: bold; color: white;">Achievements</p>
 								</div>
-								<div class="uzi" style="background-color: #ffbd39; padding: 10px;border-radius: 20px; margin: 10px;">
+								<div class="uzi"
+									style="background-color: #ffbd39; padding: 10px;border-radius: 20px; margin: 10px;">
 									<h3 style="font-size: 24px; font-weight: bold; color: white;">15,000+</h3>
-									<p style="font-size: 14px; font-weight: bold; color: white;">LinkedIn Impressions</p>
+									<p style="font-size: 14px; font-weight: bold; color: white;">LinkedIn Impressions
+									</p>
 								</div>
 							</div>
 						</div>
 						<br>
-                          
+
 						<div class="counter-wrap ftco-animate  mt-md-3 text-center">
 							<div class="text">
 								<center>
@@ -607,6 +615,7 @@
 		</div>
 	</section>
 
+
 	<section class="ftco-section" id="Certificate-section">
 		<div class="container">
 			<div class="row justify-content-center mb-5 pb-5">
@@ -616,7 +625,6 @@
 					<p>Below are the Data Analytics Certificates .</p>
 				</div>
 			</div>
-
 			<div class="row d-flex justify-content-center">
 				<div class="col-md-4 d-flex ftco-animate">
 					<div class="blog-entry">
@@ -673,31 +681,164 @@
 				</div>
 			</div>
 			<div class=" row d-flex justify-content-center">
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry">
+						<a href="https://www.linkedin.com/learning/certificates/a97ff21f83cad5ca092d9a83f6a266dcefb878f6558d8ef1f39e6186e3ae99b4?trk=share_certificate"
+							class="block-20 zoom-effect"
+						    style="background-image: url('images/machine_learning.JPG ');">
+						</a>
+					    <div class="text mt-3 float-right d-block">
 
-									<div class="col-md-4 d-flex ftco-animate">
-										<div class="blog-entry">
-											<a href="https://www.linkedin.com/learning/certificates/a97ff21f83cad5ca092d9a83f6a266dcefb878f6558d8ef1f39e6186e3ae99b4?trk=share_certificate"
-												class="block-20 zoom-effect"
-												style="background-image: url('images/machine_learning.JPG ');">
-											</a>
-											<div class="text mt-3 float-right d-block">
-
-												<h3 class="heading"><a
-														href="https://www.linkedin.com/learning/certificates/a97ff21f83cad5ca092d9a83f6a266dcefb878f6558d8ef1f39e6186e3ae99b4?trk=share_certificate">
-														𝐌𝐚𝐜𝐡𝐢𝐧𝐞 𝐋𝐞𝐚𝐫𝐧𝐢𝐧𝐠 𝐰𝐢𝐭𝐡 𝐏𝐲𝐭𝐡𝐨𝐧 𝐅𝐨𝐮𝐧𝐝𝐚𝐭𝐢𝐨𝐧𝐬
-													</a></h3>
-												<p> Completed the 	𝐌𝐚𝐜𝐡𝐢𝐧𝐞 𝐋𝐞𝐚𝐫𝐧𝐢𝐧𝐠 𝐰𝐢𝐭𝐡 𝐏𝐲𝐭𝐡𝐨𝐧 𝐅𝐨𝐮𝐧𝐝𝐚𝐭𝐢𝐨𝐧𝐬 course, gaining a strong understanding of key concepts in machine learning, including algorithms, 
-													data preprocessing, and model evaluation using Python. 🎓✨
-
-												</p>
-											</div>
-										</div>
-									</div>
-
-
+							<h3 class="heading"><a
+									href="https://www.linkedin.com/learning/certificates/a97ff21f83cad5ca092d9a83f6a266dcefb878f6558d8ef1f39e6186e3ae99b4?trk=share_certificate">
+									𝐌𝐚𝐜𝐡𝐢𝐧𝐞 𝐋𝐞𝐚𝐫𝐧𝐢𝐧𝐠 𝐰𝐢𝐭𝐡 𝐏𝐲𝐭𝐡𝐨𝐧
+									𝐅𝐨𝐮𝐧𝐝𝐚𝐭𝐢𝐨𝐧𝐬
+								</a></h3>
+								<p> Completed the 𝐌𝐚𝐜𝐡𝐢𝐧𝐞 𝐋𝐞𝐚𝐫𝐧𝐢𝐧𝐠 𝐰𝐢𝐭𝐡 𝐏𝐲𝐭𝐡𝐨𝐧
+								𝐅𝐨𝐮𝐧𝐝𝐚𝐭𝐢𝐨𝐧𝐬 course, gaining a strong understanding of key
+								concepts in machine learning, including algorithms,
+								data preprocessing, and model evaluation using Python. 🎓✨
+								</p>
 						</div>
-		    </div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry">
+						<a href="https://drive.google.com/file/d/1fRhX9NW4EU-QXLri_ZLH5GtNsAFBORbA/view"
+							class="block-20 zoom-effect"
+						    style="background-image: url('images/Muhammad_Uzair_Shafiq20240930-74-2rav5q.jpg');">
+						</a>
+					    <div class="text mt-3 float-right d-block">
+
+							<h3 class="heading"><a
+									href="https://drive.google.com/file/d/1fRhX9NW4EU-QXLri_ZLH5GtNsAFBORbA/view">
+									𝐌𝐢𝐜𝐫𝐨𝐬𝐨𝐟𝐭 𝐄𝐱𝐜𝐞𝐥 𝐛𝐲 𝐆𝐫𝐞𝐚𝐭 𝐋𝐞𝐚𝐫𝐧𝐢𝐧𝐠
+								</a></h3>
+								<p> The Microsoft Excel by Great Learning certificate demonstrates 
+									proficiency in using Excel for data analysis, reporting,
+									 and problem-solving. 🎓✨
+								</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
+
+	<section class="ftco-section" id="Internship-section">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-5">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<h1 class="big big-2">Internships</h1>
+					<h2 class="mb-4">Internships</h2>
+					<p>Below are the Data Analytics Internship Certificates .</p>
+				</div>
+			</div>
+			<div class="row d-flex justify-content-center">
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry">
+						<a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/PwC%20Switzerland/a87GpgE6tiku7q3gu_PwC%20Switzerland_KH6nMaWkp7m2LZi3P_1729115412796_completion_certificate.pdf"
+							class="block-20 zoom-effect"
+							style="background-image: url('images/pwc.png');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+
+							<h3 class="heading"><a
+									href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/PwC%20Switzerland/a87GpgE6tiku7q3gu_PwC%20Switzerland_KH6nMaWkp7m2LZi3P_1729115412796_completion_certificate.pdf">
+									
+                                         𝐏𝐰𝐂 𝐒𝐰𝐢𝐭𝐳𝐞𝐫𝐥𝐚𝐧𝐝 - 𝐏𝐨𝐰𝐞𝐫 𝐁𝐈 𝐉𝐨𝐛 𝐒𝐢𝐦𝐮𝐥𝐚𝐭𝐢𝐨𝐧 𝐛𝐲 𝐅𝐨𝐫𝐚𝐠𝐞
+								</a></h3>
+							
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/JPMorgan%20Chase%20Corporate/XiuvjcwqWRqH9oy38_JPMorgan%20Chase%20&%20Co._KH6nMaWkp7m2LZi3P_1728496699177_completion_certificate.pdf"
+							class="block-20 zoom-effect"
+							style="background-image: url('images/jpMorgan.png');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+
+							<h3 class="heading"><a
+									href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/JPMorgan%20Chase%20Corporate/XiuvjcwqWRqH9oy38_JPMorgan%20Chase%20&%20Co._KH6nMaWkp7m2LZi3P_1728496699177_completion_certificate.pdf">
+									𝐉𝐏𝐌𝐨𝐫𝐠𝐚𝐧 𝐂𝐡𝐚𝐬𝐞 & 𝐂𝐨. - 𝐄𝐱𝐜𝐞𝐥 𝐒𝐤𝐢𝐥𝐥𝐬 𝐉𝐨𝐛 𝐒𝐢𝐦𝐮𝐥𝐚𝐭𝐢𝐨𝐧 </a></h3>
+							
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="https://drive.google.com/file/d/1pXsX1sh1qmKfpO-h0yOJzMRL-Ao7Mv1I/view?usp=drive_link"
+							class="block-20 zoom-effect" style="background-image: url('images/cognifyz.png');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+
+							<h3 class="heading"><a
+									href="https://drive.google.com/file/d/1pXsX1sh1qmKfpO-h0yOJzMRL-Ao7Mv1I/view?usp=drive_link">
+									
+                                         𝐃𝐚𝐭𝐚 𝐀𝐧𝐚𝐥𝐲𝐭𝐢𝐜𝐬 𝐛𝐲 𝐂𝐨𝐠𝐧𝐢𝐟𝐲𝐳 𝐓𝐞𝐜𝐡𝐧𝐨𝐥𝐨𝐠𝐢𝐞𝐬</a></h3>
+	
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class=" row d-flex justify-content-center">
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry">
+						<a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Accenture%20North%20America/hzmoNKtzvAzXsEqx8_Accenture%20North%20America_KH6nMaWkp7m2LZi3P_1728312110978_completion_certificate.pdf"
+							class="block-20 zoom-effect"
+						    style="background-image: url('images/accenture.png ');">
+						</a>
+					    <div class="text mt-3 float-right d-block">
+
+							<h3 class="heading"><a
+									href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Accenture%20North%20America/hzmoNKtzvAzXsEqx8_Accenture%20North%20America_KH6nMaWkp7m2LZi3P_1728312110978_completion_certificate.pdf">
+									
+                                        𝐀𝐜𝐜𝐞𝐧𝐭𝐮𝐫𝐞 𝐍𝐨𝐫𝐭𝐡 𝐀𝐦𝐞𝐫𝐢𝐜𝐚 - 𝐃𝐚𝐭𝐚 𝐀𝐧𝐚𝐥𝐲𝐭𝐢𝐜𝐬 𝐚𝐧𝐝 𝐕𝐢𝐬𝐮𝐚𝐥𝐢𝐳𝐚𝐭𝐢𝐨𝐧 𝐉𝐨𝐛 𝐒𝐢𝐦𝐮𝐥𝐚𝐭𝐢𝐨𝐧
+								</a></h3>
+								
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry">
+						<a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Red%20Bull/nTAAtHcgiQddMMgo8_Red%20Bull_KH6nMaWkp7m2LZi3P_1728917299843_completion_certificate.pdf"
+							class="block-20 zoom-effect"
+						    style="background-image: url('images/of-premise\ sales\ compeletion_certificate.jpg');">
+						</a>
+					    <div class="text mt-3 float-right d-block">
+
+							<h3 class="heading"><a
+									href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Red%20Bull/nTAAtHcgiQddMMgo8_Red%20Bull_KH6nMaWkp7m2LZi3P_1728917299843_completion_certificate.pdf">
+									𝐑𝐞𝐝 𝐁𝐮𝐥𝐥'𝐬 𝐨𝐟𝐟-𝐩𝐫𝐞𝐦𝐢𝐬𝐞 𝐬𝐚𝐥𝐞𝐬
+								</a></h3>
+								
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry">
+						<a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Red%20Bull/nTAAtHcgiQddMMgo8_Red%20Bull_KH6nMaWkp7m2LZi3P_1728917299843_completion_certificate.pdf"
+							class="block-20 zoom-effect"
+						    style="background-image: url('images/on-premise\ sales\ completion_certificate.jpg');"">
+						</a>
+					    <div class="text mt-3 float-right d-block">
+
+							<h3 class="heading"><a
+									href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Red%20Bull/nTAAtHcgiQddMMgo8_Red%20Bull_KH6nMaWkp7m2LZi3P_1728917299843_completion_certificate.pdf">
+									
+                                    𝐑𝐞𝐝 𝐁𝐮𝐥𝐥'𝐬 𝐨𝐧-𝐩𝐫𝐞𝐦𝐢𝐬𝐞 𝐬𝐚𝐥𝐞𝐬
+								</a></h3>
+								
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
 
 	<section class="ftco-section" id="project-section">
 		<div class="container">
@@ -931,7 +1072,7 @@
 							<span class="icon-globe"></span>
 						</div>
 						<h3 class="mb-4">Download Resume</h3>
-						<p><a href="https://drive.google.com/file/d/1dpGf98S4CUCClO5bdHjxYNAucXSnzwF0/view?usp=drive_link"
+						<p><a href="https://drive.google.com/file/d/10N2VpHJE3JAx-teaWzXVJkfSINRB5aKb/view?usp=drive_link"
 								target="_blank">resumelink</a></p>
 					</div>
 				</div>
@@ -975,9 +1116,9 @@
 					<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						Copyright &copy;
 						<script>document.write(new Date().getFullYear());</script> All rights reserved | This template
-						is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a
-							href="https://colorlib.com" target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						is made  by Uzair Shafiq  <i class="icon-heart color-danger" aria-hidden="true"></i>
+							
+				
 					</p>
 				</div>
 			</div>
